@@ -12,10 +12,12 @@ public class HourContract {
         this.hours = hours;
     }
 
+    public double totalValue(){
+        double tempValue = getValuePerHour() * getHours();
+        return tempValue;
+    }
 
-
-
-    
+    // GETTER & SETTER 
     public LocalDateTime getDate() {
         return date;
     }

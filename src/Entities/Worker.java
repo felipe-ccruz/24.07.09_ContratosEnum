@@ -14,9 +14,27 @@ public class Worker {
         this.baseSalary = baseSalary;
     }
 
+    // METODOS
+    public void addContracts(HourContract contract){
+        contracts.add(contract);
+    }
 
+    public void removeContract(HourContract contract){
+        contracts.remove(contract);
+    }
 
+    public double income(int year, int month){
+        double liquidCash = getBaseSalary();
+        for (HourContract hc : contracts){
+            if(hc.getDate().getYear() == year && hc.getDate().getMonthValue() == month){
+                liquidCash += hc.totalValue();
+            }
+        }
 
+        return liquidCash;
+    }
+
+    // GETTER & SETTER
     public String getName() {
         return name;
     }
