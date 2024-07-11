@@ -6,11 +6,13 @@ import Enum.WorkerLevel;
 public class Worker {
     private String name;
     private WorkerLevel level;
+    private Departament departament;
     private double baseSalary;
     private ArrayList<HourContract> contracts = new ArrayList<>();
-    public Worker(String name, WorkerLevel level, double baseSalary) {
+    public Worker(String name, WorkerLevel level, Departament departament, double baseSalary ) {
         this.name = name;
         this.level = level;
+        this.departament = departament;
         this.baseSalary = baseSalary;
     }
 
@@ -34,6 +36,8 @@ public class Worker {
         return liquidCash;
     }
 
+
+
     // GETTER & SETTER
     public String getName() {
         return name;
@@ -55,5 +59,17 @@ public class Worker {
     }
     public ArrayList<HourContract> getHourContracts(){
         return contracts;
+    }
+    public Departament getDepartament() {
+        return departament;
+    }
+    public void setDepartament(Departament departament) {
+        this.departament = departament;
+    }
+    public ArrayList<HourContract> getContracts() {
+        return contracts;
+    }
+    public void setContracts(ArrayList<HourContract> contracts) {
+        this.contracts = contracts;
     }
 }

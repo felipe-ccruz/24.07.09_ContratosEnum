@@ -1,13 +1,14 @@
 package Entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class HourContract {
-    private LocalDateTime date;
+    private LocalDate date;
     private double valuePerHour;
     private int hours;
-    public HourContract(LocalDateTime date, double valuePerHour, int hours) {
-        this.date = date;
+    public HourContract(int year,int month,int dayOfMonth, double valuePerHour, int hours) {
+        LocalDate dt = LocalDate.of(year, month, dayOfMonth);
+        this.date = dt;
         this.valuePerHour = valuePerHour;
         this.hours = hours;
     }
@@ -17,11 +18,20 @@ public class HourContract {
         return tempValue;
     }
 
+    public void dateConstruct(int year,int month,int dayOfMonth){
+        LocalDate dt = LocalDate.of(year, month, dayOfMonth);
+    }
+
+    @Override
+    public String toString() {
+        return "HourContract [date=" + date + ", valuePerHour=" + valuePerHour + ", hours=" + hours + "]";
+    }
+
     // GETTER & SETTER 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
     public double getValuePerHour() {
