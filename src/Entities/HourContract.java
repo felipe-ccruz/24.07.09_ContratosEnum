@@ -18,10 +18,6 @@ public class HourContract {
         return tempValue;
     }
 
-    public void dateConstruct(int year,int month,int dayOfMonth){
-        LocalDate dt = LocalDate.of(year, month, dayOfMonth);
-    }
-
     @Override
     public String toString() {
         return "HourContract [date=" + date + ", valuePerHour=" + valuePerHour + ", hours=" + hours + "]";
